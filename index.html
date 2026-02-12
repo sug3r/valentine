@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine 14/2/2026 ❤️</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@400;700&family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- UI Container (Hidden for clean demo view) -->
+    <div id="ui-container" style="display: none;">
+        <div class="header">
+            <!-- <h1 id="fps">FPS: 0</h1> -->
+            <!-- Header content if needed -->
+        </div>
+
+        <!-- Settings Toggle Button -->
+        <button id="settings-toggle"
+            style="position: absolute; top: 20px; right: 20px; z-index: 1000; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; width: 40px; height: 40px; cursor: pointer; color: white; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: all 0.3s;"
+            title="Cài đặt">⚙️</button>
+
+        <!-- Controls Panel (Hidden by default) -->
+        <div class="controls-panel" id="controls-panel" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="color: var(--primary-color); margin: 0; font-family: 'Orbitron', sans-serif;">Cài Đặt</h3>
+                <button id="close-settings"
+                    style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 0;">✖️</button>
+            </div>
+
+            <!-- Music Volume -->
+            <div class="control-group">
+                <label>🔊 Âm lượng</label>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+
+            <!-- Fall Speed -->
+            <div class="control-group">
+                <label>🚀 Tốc độ rơi</label>
+                <input type="range" id="speed-slider" min="0.5" max="3" step="0.1" value="1">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button id="custom-text-btn">✍️ Sửa Lời Chúc</button>
+                <button id="toggle-rotation">⏸️ Tạm dừng</button>
+                <button id="reset-view">🔄 Góc nhìn gốc</button>
+            </div>
+        </div>
+
+        <div class="stats" id="stats-panel" style="display:none;">
+            <span id="fps">FPS: 60</span>
+        </div>
+    </div>
+
+    <!-- Modal for Custom Text -->
+    <div id="text-modal" class="modal">
+        <div class="modal-content">
+            <h2>Sửa Lời Chúc 💌</h2>
+            <p class="hint">Nhập mỗi câu chúc một dòng (Enter xuống dòng)</p>
+            <textarea id="custom-messages" placeholder="Nhập lời chúc của bạn ở đây..."></textarea>
+            <div class="modal-buttons">
+                <button id="save-text-btn" class="primary-btn">Lưu & Chạy</button>
+                <button id="close-modal-btn" class="secondary-btn">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen">
+        <div class="welcome-content">
+            <h1 class="love-title">🌹 Happy Valentine 2026 🌹</h1>
+            <p class="love-subtitle">14/02/2026 - Mãi yêu em</p>
+            <div class="heart-icon">💝</div>
+
+            <div class="button-group">
+                <button id="start-button" class="start-btn">❤️ Ấn để bắt đầu</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Import Map for Three.js Modules -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./js/vendor/three.module.js"
+            }
+        }
+    </script>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

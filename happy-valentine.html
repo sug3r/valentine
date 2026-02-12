@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine 14/2/2026 ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@400;700&family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 
+    INLINED CSS FROM css/style.css
+*/
+        :root {
+            --primary-color: #ff1493;
+            --secondary-color: #ff69b4;
+            --accent-color: #ffd700;
+            --love-red: #ff0066;
+            --love-pink: #ff69b4;
+            --bg-dark: rgba(0, 0, 0, 0.85);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            overflow: hidden;
+            background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%);
+        }
+
+        #ui-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        /* Header Styling */
+        .header {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            pointer-events: none;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Controls Panel - Glassmorphism */
+        .controls-panel {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px 25px;
+            min-width: 280px;
+            pointer-events: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .control-group {
+            margin-bottom: 25px;
+        }
+
+        .control-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .value-display {
+            font-size: 1.8rem;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Range Slider Styling */
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 25px var(--primary-color);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        /* Button Styling */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        button {
+            padding: 14px 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+            pointer-events: auto;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 20, 147, 0.6);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Stats panel */
+        .stats {
+            pointer-events: none;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Welcome Screen */
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a0a1f 0%, #0a0515 50%, #1a0520 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .welcome-content {
+            text-align: center;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .love-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 4rem;
+            background: linear-gradient(135deg, var(--love-red), var(--love-pink), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .love-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .heart-icon {
+            font-size: 5rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin: 30px 0;
+        }
+
+        .start-btn {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, var(--love-red), var(--love-pink));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(255, 0, 102, 0.5);
+            transition: all 0.3s ease;
+            text-transform: none;
+            letter-spacing: 2px;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 0, 102, 0.7);
+        }
+
+        .upload-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid rgba(255, 105, 180, 0.5);
+            color: #ff69b4;
+            border-radius: 20px;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .upload-btn:hover {
+            background: rgba(255, 105, 180, 0.1);
+            border-color: #ff69b4;
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(26, 10, 31, 0.95), rgba(10, 5, 21, 0.95));
+            border: 2px solid var(--love-pink);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(255, 0, 102, 0.4);
+            animation: scaleIn 0.3s ease-out;
+        }
+
+        .modal-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--love-pink);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-content textarea,
+        .modal-content input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--love-pink);
+            border-radius: 10px;
+            color: white;
+            resize: vertical;
+            min-height: 120px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content input[type="text"] {
+            min-height: auto;
+        }
+
+        .modal-content textarea::placeholder,
+        .modal-content input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .modal-content textarea:focus,
+        .modal-content input[type="text"]:focus {
+            outline: none;
+            border-color: var(--love-red);
+            box-shadow: 0 0 20px rgba(255, 0, 102, 0.3);
+        }
+
+        .hint {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--love-red), var(--love-pink));
+            flex: 1;
+        }
+
+        .secondary-btn {
+            background: rgba(255, 255, 255, 0.1);
+            flex: 1;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translate(50px, -50%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(0, -50%);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.15);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .controls-panel {
+                right: 20px;
+                left: 20px;
+                top: auto;
+                bottom: 20px;
+                transform: none;
+                min-width: auto;
+            }
+
+            .stats {
+                left: 20px;
+                bottom: auto;
+                top: 120px;
+            }
+
+            .love-title {
+                font-size: 2.5rem;
+            }
+
+            .love-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .heart-icon {
+                font-size: 3rem;
+            }
+
+            .start-btn {
+                font-size: 1.2rem;
+                padding: 15px 40px;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
+            .modal-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Demo text overlay (giống ảnh mẫu) */
+        .demo-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.3);
+            font-family: 'Dancing Script', cursive;
+            pointer-events: none;
+            z-index: 1;
+            text-align: center;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- UI Container (Hidden for clean demo view) -->
+    <div id="ui-container" style="display: none;">
+        <div class="header">
+            <!-- <h1 id="fps">FPS: 0</h1> -->
+            <!-- Header content if needed -->
+        </div>
+
+        <!-- Settings Toggle Button -->
+        <button id="settings-toggle"
+            style="position: absolute; top: 20px; right: 20px; z-index: 1000; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; width: 40px; height: 40px; cursor: pointer; color: white; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">⚙️</button>
+
+        <!-- Controls Panel (Hidden by default) -->
+        <div class="controls-panel" id="controls-panel" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="color: var(--primary-color); margin: 0; font-family: 'Orbitron', sans-serif;">Cài Đặt</h3>
+                <button id="close-settings"
+                    style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 0;">✖️</button>
+            </div>
+
+            <!-- Music Volume -->
+            <div class="control-group">
+                <label>🔊 Âm lượng</label>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+
+            <!-- Fall Speed -->
+            <div class="control-group">
+                <label>🚀 Tốc độ rơi</label>
+                <input type="range" id="speed-slider" min="0.5" max="3" step="0.1" value="1">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button id="custom-text-btn">✍️ Sửa Lời Chúc</button>
+                <button id="toggle-rotation">⏸️ Tạm dừng</button>
+                <button id="reset-view">🔄 Góc nhìn gốc</button>
+            </div>
+        </div>
+
+        <div class="stats" id="stats-panel" style="display:none;">
+            <span id="fps">FPS: 60</span>
+        </div>
+    </div>
+
+    <!-- Modal for Custom Text -->
+    <div id="text-modal" class="modal">
+        <div class="modal-content">
+            <h2>Sửa Lời Chúc 💌</h2>
+            <p class="hint">Nhập mỗi câu chúc một dòng (Enter xuống dòng)</p>
+            <textarea id="custom-messages" placeholder="Nhập lời chúc của bạn ở đây..."></textarea>
+            <div class="modal-buttons">
+                <button id="save-text-btn" class="primary-btn">Lưu & Chạy</button>
+                <button id="close-modal-btn" class="secondary-btn">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen">
+        <div class="welcome-content">
+            <h1 class="love-title">🌹 Happy Valentine 2026 🌹</h1>
+            <p class="love-subtitle">14/02/2026 - Mãi yêu em</p>
+            <div class="heart-icon">💝</div>
+
+            <div class="button-group">
+                <button id="start-button" class="start-btn">❤️ Ấn để bắt đầu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+        Use the local three.min.js if available, or fallback to CDN. 
+        Since we are bundling, we will assume Internet OR manual download of three.min.js
+        For this standalone file, we will link to CDN for guaranteed internet access, 
+        or use the downloaded one if local.
+    -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
+    <script>
+        /*
+            INLINED JS FROM js/main.js
+            (Modified to use global THREE object instead of import)
+        */
+
+        /**
+         * Love Galaxy Viewer - Simple falling messages (giống ảnh mẫu)
+         */
+        class LoveGalaxyViewer {
+            constructor() {
+                // Pre-configured love messages (VALENTINE 2026 SPECIAL)
+                this.predefinedMessages = [
+                    "Happy Valentine 2026 🌹", "14/02/2026", "Mãi yêu em ❤️", "My Valentine",
+                    "Trọn đời bên em", "Tình yêu vĩnh cửu", "Love you forever", "Bé yêu của anh",
+                    "Món quà vô giá", "Em là tất cả", "Valentine ấm áp", "Hạnh phúc nhé em",
+                    "Cảm ơn em đã đến", "Người yêu tuyệt vời", "Dành tặng em", "Trái tim anh",
+                    "Yêu thương đong đầy", "Ngọt ngào lãng mạn", "Phút giây bên nhau", "Kỷ niệm 14/2",
+                    "Anh yêu em nhiều", "Bên nhau trọn đời", "Tương lai rạng rỡ", "Mùa yêu thương",
+                    "Hoa hồng tặng em 🌹", "Socola ngọt ngào 🍫", "Nắm tay anh nhé", "Đi cùng anh",
+                    "Công chúa của anh", "Hoàng tử của em", "Chuyện tình mình", "Đẹp như mơ",
+                    "You are my world", "Be mine forever", "My sweet heart", "Love Story 2026",
+                    "Happy 14th Feb", "Ngày lễ tình nhân", "Chúc mừng Valentine", "Yêu em không đổi",
+                    "Anh nhớ em", "Thương em nhất", "Chỉ mình em thôi", "Duyên phận an bài",
+                    "Hạnh phúc là em", "Bình yên bên em", "Gửi ngàn nụ hôn 💋", "Ôm em thật chặt",
+                    "Mãi mãi một tình yêu", "Love Galaxy 2026", "Vũ trụ tình yêu", "Anh & Em"
+                ];
+
+
+                // Scene setup
+                this.scene = new THREE.Scene();
+                this.scene.background = new THREE.Color(0x000000); // Back to black
+
+                this.camera = new THREE.PerspectiveCamera(
+                    75,
+                    window.innerWidth / window.innerHeight,
+                    0.1,
+                    100
+                );
+                this.renderer = new THREE.WebGLRenderer({ antialias: true });
+
+                // Animation state
+                this.isRotating = true;
+
+                // Falling messages
+                this.fallingMessages = [];
+                this.speedMultiplier = 1; // Global speed control
+
+                // Wait for start button
+                this.setupWelcomeScreen();
+            }
+
+            /**
+             * Setup welcome screen
+             */
+            setupWelcomeScreen() {
+                // Start Button Handler
+                const startBtn = document.getElementById('start-button');
+                if (startBtn) {
+                    startBtn.addEventListener('click', () => {
+                        const welcomeScreen = document.getElementById('welcome-screen');
+                        if (welcomeScreen) welcomeScreen.style.display = 'none';
+
+                        // Play background music
+                        const music = document.getElementById('bg-music');
+                        if (music) {
+                            music.volume = 0.5;
+                            music.play().catch(e => {
+                                console.log("Audio play failed (Autoplay blocked?):", e);
+                            });
+                        }
+
+
+                        const uiContainer = document.getElementById('ui-container');
+                        if (uiContainer) {
+                            uiContainer.style.display = 'block';
+                            // Trigger fade in animation
+                            uiContainer.style.animation = 'fadeIn 1s ease-out';
+                        }
+
+                        this.init();
+                    });
+                } else {
+                    // Auto start if no button (fallback)
+                    this.init();
+                }
+            }
+
+            /**
+             * Initialize the application
+             */
+            init() {
+                // Renderer setup
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                document.body.appendChild(this.renderer.domElement);
+
+                // Camera position - fixed view
+                this.camera.position.set(0, 0, 15);
+                this.camera.lookAt(0, 0, 0);
+
+                // No Lights needed for Basic/Sprite materials, but adding a soft ambient just in case
+                const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+                this.scene.add(ambientLight);
+
+                // Add background stars
+                this.addBackgroundStars();
+
+                // Add small heart particles background
+                this.addHeartParticles();
+
+                // Add all pre-configured messages
+                this.addAllPredefinedMessages();
+
+                // Event listeners
+                this.setupEventListeners();
+
+                // Start animation loop
+                this.animate();
+            }
+
+            /**
+             * Add simple background stars
+             */
+            addBackgroundStars() {
+                const starsGeometry = new THREE.BufferGeometry();
+                const starsMaterial = new THREE.PointsMaterial({
+                    color: 0xffffff,
+                    size: 0.1,
+                    sizeAttenuation: true
+                });
+
+                const starsVertices = [];
+                for (let i = 0; i < 2000; i++) {
+                    const x = (Math.random() - 0.5) * 100;
+                    const y = (Math.random() - 0.5) * 100;
+                    const z = (Math.random() - 0.5) * 100;
+                    starsVertices.push(x, y, z);
+                }
+
+                starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
+                const stars = new THREE.Points(starsGeometry, starsMaterial);
+                this.scene.add(stars);
+            }
+
+            /**
+             * Add heart particles background
+             */
+            addHeartParticles() {
+                const heartChars = ['❤️', '💕', '💖', '💗', '💓', '💝'];
+
+                for (let i = 0; i < 30; i++) {
+                    const char = heartChars[Math.floor(Math.random() * heartChars.length)];
+                    const sprite = this.createSimpleTextSprite(char, 0.5);
+
+                    // Random position
+                    sprite.position.set(
+                        (Math.random() - 0.5) * 30,
+                        (Math.random() - 0.5) * 20,
+                        (Math.random() - 0.5) * 10
+                    );
+
+                    // Falling data
+                    sprite.userData = {
+                        fallSpeed: 0.005 + Math.random() * 0.01,
+                        initialY: sprite.position.y,
+                        opacity: 0.3 + Math.random() * 0.3
+                    };
+
+                    sprite.material.opacity = sprite.userData.opacity;
+                    this.scene.add(sprite);
+                }
+            }
+
+            /**
+             * Create simple text sprite
+             */
+            createSimpleTextSprite(text, size = 0.5) {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = 128;
+                canvas.height = 128;
+
+                // Text
+                context.font = 'bold 60px Arial';
+                context.fillStyle = '#ffffff';
+                context.textAlign = 'center';
+                context.textBaseline = 'middle';
+                context.fillText(text, 64, 64);
+
+                // Create texture
+                const texture = new THREE.CanvasTexture(canvas);
+                const spriteMaterial = new THREE.SpriteMaterial({
+                    map: texture,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const sprite = new THREE.Sprite(spriteMaterial);
+                sprite.scale.set(size, size, 1);
+
+                return sprite;
+            }
+
+            /**
+             * Create falling text sprite for love messages
+             */
+            createFallingTextSprite(message) {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = 1024;  // Tăng kích thước canvas
+                canvas.height = 256;
+
+                // Text with larger font
+                context.font = 'bold 72px "Dancing Script", cursive';  // Tăng từ 36px lên 72px
+                context.fillStyle = '#ff69b4';
+                context.textAlign = 'center';
+                context.textBaseline = 'middle';
+
+                // Simple single line
+                context.fillText(message, canvas.width / 2, canvas.height / 2);
+
+                // Create texture
+                const texture = new THREE.CanvasTexture(canvas);
+                const spriteMaterial = new THREE.SpriteMaterial({
+                    map: texture,
+                    transparent: true,
+                    opacity: 0.9
+                });
+                const sprite = new THREE.Sprite(spriteMaterial);
+                sprite.scale.set(8, 2, 1);  // Tăng từ 4 lên 8 để chữ to hơn
+
+                return sprite;
+            }
+
+            /**
+             * Add all pre-configured messages (RƠI VÔ TẬN - DÀY ĐẶC & ĐA DẠNG)
+             */
+            addAllPredefinedMessages() {
+                // Nhân bản danh sách tin nhắn lên 3 lần để tăng mật độ
+                const fullList = [
+                    ...this.predefinedMessages,
+                    ...this.predefinedMessages,
+                    ...this.predefinedMessages
+                ];
+
+                const totalMessages = fullList.length;
+                // Giảm khoảng cách dọc để mật độ dày hơn
+                const verticalSpread = 0.8;
+
+                fullList.forEach((message, index) => {
+                    const sprite = this.createFallingTextSprite(message);
+
+                    // Random X position
+                    const x = (Math.random() - 0.5) * 25;
+
+                    // Randomize Scale (Chữ to chữ nhỏ)
+                    // Scale gốc là (8, 2, 1). Ta nhân thêm hệ số 0.7 -> 1.5
+                    const scaleFactor = 0.7 + Math.random() * 0.8;
+                    sprite.scale.set(8 * scaleFactor, 2 * scaleFactor, 1);
+
+                    // Xếp lớp tin nhắn
+                    const startY = 10 + (index * verticalSpread);
+
+                    sprite.position.set(x, startY, 0);
+
+                    // Falling animation data
+                    const baseFallSpeed = 0.01 + Math.random() * 0.02;
+                    sprite.userData = {
+                        baseSpeed: baseFallSpeed, // Lưu tốc độ gốc
+                        fallSpeed: baseFallSpeed * this.speedMultiplier, // Áp dụng multiplier
+                        swaySpeed: 0.0005 + Math.random() * 0.001,
+                        swayAmount: 0.5 + Math.random() * 0.5,
+                        swayOffset: Math.random() * Math.PI * 2,
+                        initialX: x,
+                        minY: -15, // Cho rơi sâu hơn chút trước khi reset
+
+                        // Reset logic: đưa lên đỉnh hàng đợi
+                        maxY: 10 + (totalMessages * verticalSpread),
+
+                        // Lưu scale gốc để dùng nếu cần (hiện tại chưa cần)
+                        originalScale: scaleFactor
+                    };
+
+                    this.fallingMessages.push(sprite);
+                    this.scene.add(sprite);
+                });
+            }
+
+            /**
+             * Setup UI event listeners
+             */
+            setupEventListeners() {
+                // --- 1. Audio Controls ---
+                const volumeSlider = document.getElementById('volume-slider');
+                const bgMusic = document.getElementById('bg-music');
+
+                if (volumeSlider && bgMusic) {
+                    volumeSlider.addEventListener('input', (e) => {
+                        bgMusic.volume = e.target.value;
+                    });
+                }
+
+                // --- 2. Animation Controls ---
+                // Settings Panel Toggle
+                const settingsToggle = document.getElementById('settings-toggle');
+                const controlsPanel = document.getElementById('controls-panel');
+                const closeSettings = document.getElementById('close-settings');
+
+                if (settingsToggle && controlsPanel) {
+                    settingsToggle.addEventListener('click', () => {
+                        controlsPanel.style.display = 'block';
+                        // Trigger animation
+                        controlsPanel.style.animation = 'slideInRight 0.5s ease-out';
+                        settingsToggle.style.display = 'none';
+                    });
+                }
+
+                if (closeSettings && controlsPanel && settingsToggle) {
+                    closeSettings.addEventListener('click', () => {
+                        controlsPanel.style.display = 'none';
+                        settingsToggle.style.display = 'flex';
+                    });
+                }
+
+                // Toggle rotation
+                const toggleBtn = document.getElementById('toggle-rotation');
+                if (toggleBtn) {
+                    toggleBtn.addEventListener('click', () => {
+                        this.isRotating = !this.isRotating;
+                        toggleBtn.textContent = this.isRotating ? '⏸️ Tạm dừng' : '▶️ Tiếp tục';
+                    });
+                }
+
+                // Reset view
+                const resetBtn = document.getElementById('reset-view');
+                if (resetBtn) {
+                    resetBtn.addEventListener('click', () => {
+                        this.camera.position.set(0, 0, 15);
+                    });
+                }
+
+                // Speed Slider
+                const speedSlider = document.getElementById('speed-slider');
+                if (speedSlider) {
+                    speedSlider.addEventListener('input', (e) => {
+                        this.speedMultiplier = parseFloat(e.target.value);
+
+                        // Update existing sprites
+                        this.fallingMessages.forEach(sprite => {
+                            if (sprite.userData.baseSpeed) {
+                                sprite.userData.fallSpeed = sprite.userData.baseSpeed * this.speedMultiplier;
+                            }
+                        });
+                    });
+                }
+
+                // --- 3. Custom Text Modal ---
+                const customTextBtn = document.getElementById('custom-text-btn');
+                const textModal = document.getElementById('text-modal');
+                const closeModalBtn = document.getElementById('close-modal-btn');
+                const saveTextBtn = document.getElementById('save-text-btn');
+                const customTextArea = document.getElementById('custom-messages');
+
+                if (customTextBtn && textModal) {
+                    customTextBtn.addEventListener('click', () => {
+                        textModal.style.display = 'flex';
+                        // Pre-fill with current messages
+                        if (customTextArea) {
+                            customTextArea.value = this.predefinedMessages.join('\n');
+                        }
+                    });
+                }
+
+                if (closeModalBtn && textModal) {
+                    closeModalBtn.addEventListener('click', () => {
+                        textModal.style.display = 'none';
+                    });
+                }
+
+                if (saveTextBtn && customTextArea && textModal) {
+                    saveTextBtn.addEventListener('click', () => {
+                        const text = customTextArea.value;
+                        if (text.trim()) {
+                            // Update messages
+                            const newMessages = text.split('\n').filter(line => line.trim() !== '');
+                            this.predefinedMessages = newMessages;
+
+                            // Re-generate falling messages
+                            this.clearFallingMessages();
+                            this.addAllPredefinedMessages();
+
+                            // Close modal
+                            textModal.style.display = 'none';
+                        }
+                    });
+                }
+
+                // Window resize
+                window.addEventListener('resize', () => {
+                    this.camera.aspect = window.innerWidth / window.innerHeight;
+                    this.camera.updateProjectionMatrix();
+                    this.renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            }
+
+            /**
+             * Clear all falling messages
+             */
+            clearFallingMessages() {
+                this.fallingMessages.forEach(sprite => {
+                    this.scene.remove(sprite);
+                    if (sprite.material.map) sprite.material.map.dispose();
+                    sprite.material.dispose();
+                });
+                this.fallingMessages = [];
+            }
+
+            /**
+             * Animation loop
+             */
+            animate() {
+                requestAnimationFrame(() => this.animate());
+
+                const time = performance.now() * 0.001;
+
+                // Animate falling messages (RƠI TỪ TRÊN XUỐNG)
+                this.fallingMessages.forEach(sprite => {
+                    const data = sprite.userData;
+
+                    if (this.isRotating) {
+                        // Fall down
+                        sprite.position.y -= data.fallSpeed;
+
+                        // Sway left and right while falling
+                        sprite.position.x = data.initialX + Math.sin(time * data.swaySpeed + data.swayOffset) * data.swayAmount;
+                    }
+
+                    // Reset to top when reaching bottom
+                    if (sprite.position.y < data.minY) {
+                        sprite.position.y = data.maxY;
+                        // Randomize X position again to avoid repetitive patterns
+                        data.initialX = (Math.random() - 0.5) * 22;
+                        sprite.position.x = data.initialX;
+                    }
+                });
+
+                // Animate heart particles
+                this.scene.children.forEach(child => {
+                    if (child.userData.fallSpeed && this.isRotating) {
+                        child.position.y -= child.userData.fallSpeed;
+                        if (child.position.y < -10) {
+                            child.position.y = child.userData.initialY;
+                        }
+                    }
+                });
+
+                // Render
+                this.renderer.render(this.scene, this.camera);
+            }
+        }
+
+        // Initialize the application
+        const app = new LoveGalaxyViewer();
+    </script>
+</body>
+
+</html>

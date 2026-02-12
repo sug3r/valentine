@@ -1,0 +1,16 @@
+{
+  "name": "galaxy-viewer",
+  "version": "1.0.0",
+  "description": "Love Galaxy Viewer - Visual Experience",
+  "main": "desktop-app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . \"Love Galaxy\" --platform=win32 --arch=x64 --out=dist --overwrite"
+  },
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-packager": "^17.1.2"
+  }
+}
